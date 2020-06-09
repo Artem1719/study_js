@@ -1,7 +1,7 @@
 console.log(3);
 alert("Hello world!");
 console.log(1);
-var myVar = 10;
+
 
 
 let money = 1500;
