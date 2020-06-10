@@ -14,3 +14,4 @@ console.log(money);
 console.log(income);
 console.log(period);
 console.log(mission);
+console.log(deposit);
