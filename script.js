@@ -19,3 +19,7 @@ console.log('Цель заработать ' + mission + ' рублей/долл
 console.log(addExpenses.toLowerCase().split(', '));
 let budgetDay = money/30;
 console.log('budgetDay: ', budgetDay); 
+
+money=+prompt('Ваш месячный доход?'); 
+console.log('money:', money);
+
