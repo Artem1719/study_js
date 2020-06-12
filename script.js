@@ -36,8 +36,10 @@ console.log('Сумма расходов 1: ', amount1);
 let amount2=parseInt(prompt('Во сколько это обойдется?'));
 console.log('Сумма расходов 2: ', amount2);
 
-let budgetMonth=money - (amount1 + amount2);
+let budgetMonth=money - amount1 - amount2;
 console.log('Месячный бюджет равен', budgetMonth);
 
 console.log('Цель будет достигнута за ' + Math.ceil(mission/budgetMonth) + ' месяцев');
 
+budgetDay = Math.floor(budgetMonth/30);
+console.log('Бюджет на день:', budgetDay);
