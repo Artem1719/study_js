@@ -26,3 +26,12 @@ addExpenses=prompt('Перечислите возможные расходы з�
 console.log('addExpenses: ', addExpenses);
 deposit=confirm('Есть ли у вас депозит в банке?');
 console.log('deposit: ', deposit);
+
+let expenses1=prompt('Введите обязательную статью расходов?');
+console.log('expenses1: ', expenses1);
+let expenses2=prompt('Введите обязательную статью расходов?');
+console.log('expenses2: ', expenses2);
+let amount1=parseFloat(prompt('Во сколько это обойдется?'));
+console.log('amount1: ', amount1);
+let amount2=parseInt(prompt('Во сколько это обойдется?'));
+console.log('amount2: ', amount2);
