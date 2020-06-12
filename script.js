@@ -1,8 +1,4 @@
 'use strict';
-//let question=confirm('Тебе есть 18 лет?');
-//let question2=+prompt('Сколько тебе лет?', '18');
-//console.log('question: ', question);
-//console.log(typeof question2);
 
 let money = +prompt('Ваш месячный доход?', 30000);
 console.log(typeof money);
