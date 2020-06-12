@@ -4,29 +4,22 @@
 //console.log('question: ', question);
 //console.log(typeof question2);
 
-let money = 30000;
+let money = +prompt('Ваш месячный доход?', 30000);
 console.log(typeof money);
+console.log('Ваш месячный доход:', money);
 let income = 'frilance';
 console.log(typeof income);
-let addExpenses = 'Internet, Mobile connection, Communal expenses';
-let deposit = true;
+let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
+console.log('Возможные расходы ', addExpenses);
+let deposit=confirm('Есть ли у вас депозит в банке?', true);
 console.log(typeof deposit);
+console.log('deposit: ', deposit);
 let mission = 200000;
 let period = 12;
 console.log(addExpenses.length);
 console.log('Период равен ' + period + ' месяцев');
 console.log('Цель заработать ' + mission + ' рублей/долларов/гривен/юани');
 console.log(addExpenses.toLowerCase().split(', '));
-let budgetDay = money/30;
-console.log('budgetDay: ', budgetDay);
-
-//Третий урок начался
-money=+prompt('Ваш месячный доход?'); 
-console.log('Ваш месячный доход:', money);
-addExpenses=prompt('Перечислите возможные расходы за рассчитываемый период через запятую?');
-console.log('Возможные расходы ', addExpenses);
-deposit=confirm('Есть ли у вас депозит в банке?');
-console.log('deposit: ', deposit);
 
 let expenses1=prompt('Введите обязательную статью расходов?');
 console.log('Статья расходов 1: ', expenses1);
@@ -42,7 +35,7 @@ console.log('Месячный бюджет равен', budgetMonth);
 
 console.log('Цель будет достигнута за ' + Math.ceil(mission/budgetMonth) + ' месяцев');
 
-budgetDay = Math.floor(budgetMonth/30);
+let budgetDay = Math.floor(budgetMonth/30);
 console.log('Бюджет на день:', budgetDay);
 //Условие
 if (budgetDay>=1200) {
