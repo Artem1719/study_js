@@ -22,4 +22,6 @@ console.log('budgetDay: ', budgetDay);
 
 money=+prompt('Ваш месячный доход?'); 
 console.log('money:', money);
+addExpenses=prompt('Перечислите возможные расходы за рассчитываемый период через запятую?');
+console.log('addExpenses: ', addExpenses);
 
