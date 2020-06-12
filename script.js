@@ -19,10 +19,10 @@ console.log(addExpenses.toLowerCase().split(', '));
 
 let expenses1=prompt('Введите обязательную статью расходов?');
 console.log('Статья расходов 1: ', expenses1);
-let expenses2=prompt('Введите обязательную статью расходов?');
-console.log('Статья расходов 2: ', expenses2);
 let amount1=parseFloat(prompt('Во сколько это обойдется?'));
 console.log(expenses1 + ' : ' + amount1);
+let expenses2=prompt('Введите обязательную статью расходов?');
+console.log('Статья расходов 2: ', expenses2);
 let amount2=parseInt(prompt('Во сколько это обойдется?'));
 console.log(expenses2 + ' : ' + amount2);
 
