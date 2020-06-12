@@ -18,8 +18,9 @@ console.log('Период равен ' + period + ' месяцев');
 console.log('Цель заработать ' + mission + ' рублей/долларов/гривен/юани');
 console.log(addExpenses.toLowerCase().split(', '));
 let budgetDay = money/30;
-console.log('budgetDay: ', budgetDay); 
+console.log('budgetDay: ', budgetDay);
 
+//Третий урок начался
 money=+prompt('Ваш месячный доход?'); 
 console.log('Ваш месячный доход:', money);
 addExpenses=prompt('Перечислите возможные расходы за рассчитываемый период через запятую?');
@@ -43,3 +44,13 @@ console.log('Цель будет достигнута за ' + Math.ceil(mission
 
 budgetDay = Math.floor(budgetMonth/30);
 console.log('Бюджет на день:', budgetDay);
+//Условие
+if (budgetDay>=1200) {
+    console.log('У вас высокий уровень дохода');
+} else if (600<=budgetDay && budgetDay<1200) {
+    console.log('У вас средний уровень дохода');
+} else if (0<=budgetDay && budgetDay<600) {
+    console.log('К сожалению у вас уровень дохода ниже среднего');
+} else if (budgetDay<0) {
+    console.log('Что то пошло не так');
+}
