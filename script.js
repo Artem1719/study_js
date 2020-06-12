@@ -24,4 +24,5 @@ money=+prompt('Ваш месячный доход?');
 console.log('money:', money);
 addExpenses=prompt('Перечислите возможные расходы за рассчитываемый период через запятую?');
 console.log('addExpenses: ', addExpenses);
-
+deposit=confirm('Есть ли у вас депозит в банке?');
+console.log('deposit: ', deposit);
