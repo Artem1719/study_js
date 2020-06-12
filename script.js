@@ -35,3 +35,6 @@ let amount1=parseFloat(prompt('Во сколько это обойдется?'))
 console.log('amount1: ', amount1);
 let amount2=parseInt(prompt('Во сколько это обойдется?'));
 console.log('amount2: ', amount2);
+
+let budgetMonth=Number(amount1 + amount2);
+console.log('budgetMonth: ', budgetMonth);
