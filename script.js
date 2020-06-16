@@ -1,13 +1,14 @@
 'use strict';
 
+
 let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
 let money,
     income = 'frilance',
-    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses'),
-    deposit=confirm('Есть ли у вас депозит в банке?', true),
+    addExpenses,
+    deposit, 
     mission = 200000,
     period = 12;
 
@@ -18,6 +19,9 @@ let start = function() {
     while(!isNumber(money)); 
 };
 start();
+
+addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
+deposit=confirm('Есть ли у вас депозит в банке?', true);
 
 let showTypeOf = function(data) {
     console.log(data, typeof(data));
