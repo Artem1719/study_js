@@ -19,9 +19,9 @@ console.log('Возможные расходы: ', addExpenses);
 console.log(addExpenses.toLowerCase().split(', '));
 
 let expenses1=prompt('Введите обязательную статью расходов?', 'Internet');
-let amount1=parseFloat(prompt('Во сколько это обойдется?'));
+let amount1=parseFloat(prompt('Во сколько это обойдется?', 2500));
 let expenses2=prompt('Введите обязательную статью расходов?', 'Mobile connection');
-let amount2=parseInt(prompt('Во сколько это обойдется?'));
+let amount2=parseInt(prompt('Во сколько это обойдется?' , 5000));
 
 function getExpensesMonth() {
 return amount1 + amount2;
@@ -56,4 +56,3 @@ let getStatusIncome = function() {
     }
 };
 console.log(getStatusIncome());
-console.log(1);
