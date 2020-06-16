@@ -64,7 +64,12 @@ console.log('Месячный бюджет равен', accumulatedMonth);
 function getTargetMonth() {
 return Math.ceil(mission/accumulatedMonth);
 };
-console.log('Цель будет достигнута за ' + getTargetMonth(mission,accumulatedMonth) + ' месяцев');
+
+if (getTargetMonth() > 0) {
+    console.log('Цель будет достигнута за ' + getTargetMonth() + ' месяцев');
+} 
+else console.log('Цель не будет достигнута');
+
 
 let budgetDay = Math.floor(accumulatedMonth/30);
 console.log('Бюджет на день:', budgetDay);
