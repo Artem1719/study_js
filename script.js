@@ -10,7 +10,7 @@ let money,
 let start = function() {
     money = prompt('Ваш месячный доход?');
 
-    while(isNaN(money) || money.trim() === '' || money === null) {
+    while(isNaN(parseFloat(money))) {
         money = prompt('Ваш месячный доход?');
     }
 };
