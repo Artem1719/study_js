@@ -56,3 +56,4 @@ let getStatusIncome = function() {
     }
 };
 console.log(getStatusIncome());
+console.log(1);
