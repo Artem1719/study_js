@@ -1,5 +1,9 @@
 'use strict';
 
+let isNumber = function(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 let money,
     income = 'frilance',
     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses'),
@@ -10,7 +14,7 @@ let money,
 let start = function() {
     money = prompt('Ваш месячный доход?');
 
-    while(isNaN(parseFloat(money))) {
+    while(!isNumber(money)) {
         money = prompt('Ваш месячный доход?');
     }
 };
