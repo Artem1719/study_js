@@ -2,7 +2,7 @@
 
 let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
-}
+};
 
 let money,
     income = 'frilance',
@@ -12,11 +12,10 @@ let money,
     period = 12;
 
 let start = function() {
-    money = prompt('Ваш месячный доход?');
-
-    while(!isNumber(money)) {
+    do {
         money = prompt('Ваш месячный доход?');
     }
+    while(!isNumber(money)); 
 };
 start();
 
