@@ -39,11 +39,14 @@ let expenses = [];
 
 function getExpensesMonth() {
 let sum=0;
-for (let i = 0; i < 4; i++){
-
+for (let i = 0; i < 2; i++){
+        let amount;
         expenses[i] = prompt('Введите обязательную статью расходов?');
-    
-        sum += +prompt('Во сколько это обойдется?');
+        do {
+            amount = prompt('Во сколько это обойдется?');
+        }
+        while(!isNumber(amount)); 
+        sum += +amount;
 }
 console.log(expenses);
 return sum;
