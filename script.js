@@ -1,11 +1,20 @@
 'use strict';
 
-let money = +prompt('Ваш месячный доход?', 30000);
-let income = 'frilance';
-let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
-let deposit=confirm('Есть ли у вас депозит в банке?', true);
-let mission = 200000;
-let period = 12;
+let money,
+    income = 'frilance',
+    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses'),
+    deposit=confirm('Есть ли у вас депозит в банке?', true),
+    mission = 200000,
+    period = 12;
+
+let start = function() {
+    money = prompt('Ваш месячный доход?');
+
+    while(isNaN(money) || money.trim() === '' || money === null) {
+        money = prompt('Ваш месячный доход?');
+    }
+};
+start();
 
 let showTypeOf = function(data) {
     console.log(data, typeof(data));
@@ -18,21 +27,32 @@ showTypeOf(deposit);
 console.log('Возможные расходы: ', addExpenses);
 console.log(addExpenses.toLowerCase().split(', '));
 
-let expenses1=prompt('Введите обязательную статью расходов?', 'Internet');
+/*let expenses1=prompt('Введите обязательную статью расходов?', 'Internet');
 let amount1=parseFloat(prompt('Во сколько это обойдется?', 2500));
 let expenses2=prompt('Введите обязательную статью расходов?', 'Mobile connection');
 let amount2=parseInt(prompt('Во сколько это обойдется?' , 5000));
+*/
+let expenses = [];
 
 function getExpensesMonth() {
-return amount1 + amount2;
+let sum=0;
+for (let i = 0; i < 4; i++){
+
+        expenses[i] = prompt('Введите обязательную статью расходов?');
+    
+        sum += +prompt('Во сколько это обойдется?');
+}
+console.log(expenses);
+return sum;
 };
-console.log('Обязательные расходы за месяц ', getExpensesMonth(amount1,amount2));
+let expensesAmount = getExpensesMonth();
+console.log('Обязательные расходы за месяц ', + expensesAmount);
 
 function getAccumulatedMonth() {
-    return money - amount1 - amount2;
+    return money - expensesAmount;
 };
 
-let accumulatedMonth = getAccumulatedMonth(money,amount1,amount2);
+let accumulatedMonth = getAccumulatedMonth();
 console.log('Месячный бюджет равен', accumulatedMonth);
 
 function getTargetMonth() {
