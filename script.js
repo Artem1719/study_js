@@ -21,18 +21,13 @@ let appData = {
     addExpenses: [], //Доп. расходы
     deposit: false,
     mission: 20000,
-    period: 12
+    period: 12,
+    asking: function() {
+       let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
+            deposit=confirm('Есть ли у вас депозит в банке?', true);
+    }
 };
 
-
-let income = 'frilance',
-    addExpenses,
-    deposit, 
-    mission = 200000,
-    period = 12;
-
-addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
-deposit=confirm('Есть ли у вас депозит в банке?', true);
 
 let showTypeOf = function(data) {
     console.log(data, typeof(data));
