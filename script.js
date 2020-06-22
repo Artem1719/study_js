@@ -1,6 +1,5 @@
 'use strict';
 
-
 let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
@@ -34,11 +33,7 @@ showTypeOf(deposit);
 console.log('Возможные расходы: ', addExpenses);
 console.log(addExpenses.toLowerCase().split(', '));
 
-/*let expenses1=prompt('Введите обязательную статью расходов?', 'Internet');
-let amount1=parseFloat(prompt('Во сколько это обойдется?', 2500));
-let expenses2=prompt('Введите обязательную статью расходов?', 'Mobile connection');
-let amount2=parseInt(prompt('Во сколько это обойдется?' , 5000));
-*/
+
 let expenses = [];
 
 function getExpensesMonth() {
