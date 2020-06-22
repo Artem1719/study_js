@@ -13,7 +13,7 @@ let money,
 
 let start = function() {
     do {
-        money = prompt('Ваш месячный доход?');
+        money = prompt('Ваш месячный доход?', 50000);
     }
     while(!isNumber(money)); 
 };
@@ -39,9 +39,9 @@ function getExpensesMonth() {
 let sum=0;
 for (let i = 0; i < 2; i++){
         let amount;
-        expenses[i] = prompt('Введите обязательную статью расходов?');
+        expenses[i] = prompt('Введите обязательную статью расходов?' , 'еда');
         do {
-            amount = prompt('Во сколько это обойдется?');
+            amount = prompt('Во сколько это обойдется?', 10000);
         }
         while(!isNumber(amount)); 
         sum += +amount;
@@ -85,4 +85,4 @@ let getStatusIncome = function() {
     }
 };
 console.log(getStatusIncome());
-console.log(1);
+console.log(11);
