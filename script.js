@@ -4,15 +4,26 @@ let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
-let money;
+let money,
 
-let start = function() {
-    do {
-        money = prompt('Ваш месячный доход?', 50000);
-    }
-    while(!isNumber(money)); 
-};
+    start = function() {
+        do {
+            money = prompt('Ваш месячный доход?', 50000);
+        }
+        while(!isNumber(money)); 
+    };
 start();
+
+let appData = {
+    income: {},  //Доп. доходы
+    addIncome: [], //Доп. доходы
+    expenses: {}, //Доп. расходы
+    addExpenses: [], //Доп. расходы
+    deposit: false,
+    mission: 20000,
+    period: 12
+};
+
 
 let income = 'frilance',
     addExpenses,
