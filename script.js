@@ -33,7 +33,6 @@ showTypeOf(deposit);
 console.log('Возможные расходы: ', addExpenses);
 console.log(addExpenses.toLowerCase().split(', '));
 
-
 let expenses = [];
 
 function getExpensesMonth() {
@@ -86,3 +85,4 @@ let getStatusIncome = function() {
     }
 };
 console.log(getStatusIncome());
+console.log(1);
