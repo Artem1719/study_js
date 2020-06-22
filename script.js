@@ -24,7 +24,8 @@ let appData = {
     period: 12,
     asking: function() {
        let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
-            deposit=confirm('Есть ли у вас депозит в банке?', true);
+            appData.addExpenses = addExpenses.toLowerCase().split(', ');
+            appData.deposit=confirm('Есть ли у вас депозит в банке?', true);
     }
 };
 
@@ -34,11 +35,10 @@ let showTypeOf = function(data) {
 };
 
 showTypeOf(money);
-showTypeOf(income);
-showTypeOf(deposit);
+showTypeOf(appData.income);
+showTypeOf(appData.deposit);
 
-console.log('Возможные расходы: ', addExpenses);
-console.log(addExpenses.toLowerCase().split(', '));
+console.log('Возможные расходы: ', appData.addExpenses);
 
 let expenses = [];
 
@@ -67,7 +67,7 @@ let accumulatedMonth = getAccumulatedMonth();
 console.log('Месячный бюджет равен', accumulatedMonth);
 
 function getTargetMonth() {
-return Math.ceil(mission/accumulatedMonth);
+return Math.ceil(appData.mission/accumulatedMonth);
 };
 
 if (getTargetMonth() > 0) {
@@ -92,4 +92,4 @@ let getStatusIncome = function() {
     }
 };
 console.log(getStatusIncome());
-console.log(11);
+
