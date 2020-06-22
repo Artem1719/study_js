@@ -4,12 +4,7 @@ let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
-let money,
-    income = 'frilance',
-    addExpenses,
-    deposit, 
-    mission = 200000,
-    period = 12;
+let money;
 
 let start = function() {
     do {
@@ -18,6 +13,12 @@ let start = function() {
     while(!isNumber(money)); 
 };
 start();
+
+let income = 'frilance',
+    addExpenses,
+    deposit, 
+    mission = 200000,
+    period = 12;
 
 addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
 deposit=confirm('Есть ли у вас депозит в банке?', true);
