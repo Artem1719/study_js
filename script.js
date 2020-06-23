@@ -26,10 +26,21 @@ let appData = {
     budgetDay: 0,
     budgetMonth: 0,
     expensesMonth: 0,
+    sum: 0,
     asking: function() {
-       let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
-            appData.addExpenses = addExpenses.toLowerCase().split(', ');
+        appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
+            appData.addExpenses = appData.addExpenses.toLowerCase().split(', ');
             appData.deposit=confirm('Есть ли у вас депозит в банке?', true);
+            for (let i = 0; i < 2; i++){
+            let amount,
+                consumption = prompt('Введите обязательную статью расходов?' , 'еда');
+                do {
+                    amount = prompt('Во сколько это обойдется?', 10000);
+                }
+                while(!isNumber(amount));
+                appData.expenses[consumption] = amount;
+                appData.sum += +amount;
+        }
     }
 };
 appData.asking();
@@ -37,23 +48,12 @@ console.log('appData: ', appData);
 
 console.log('Возможные расходы: ', appData.addExpenses);
 
-let expenses = [];
-
 appData.getExpensesMonth = getExpensesMonth
 function getExpensesMonth() {
-let sum=0;
-for (let i = 0; i < 2; i++){
-        let amount;
-        expenses[i] = prompt('Введите обязательную статью расходов?' , 'еда');
-        do {
-            amount = prompt('Во сколько это обойдется?', 10000);
-        }
-        while(!isNumber(amount)); 
-        sum += +amount;
-}
-console.log(expenses);
-return sum;
+console.log(appData.expenses);
+return appData.sum;
 };
+
 let expensesAmount = appData.getExpensesMonth();
 console.log('Обязательные расходы за месяц ', + expensesAmount);
 
