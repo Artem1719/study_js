@@ -55,20 +55,20 @@ for (let key in appData.expenses) {
 return appData.expensesMonth;
 };
 
-let expensesAmount = appData.getExpensesMonth();
-console.log('Обязательные расходы за месяц ', + expensesAmount);
+appData.getExpensesMonth();
+console.log('Обязательные расходы за месяц ', + appData.expensesMonth);
 
-appData.getAccumulatedMonth = getAccumulatedMonth
-function getAccumulatedMonth() {
-    return money - expensesAmount;
+appData.getBudget = getBudget
+function getBudget() {
+    return money - appData.expensesMonth;
 };
 
-let accumulatedMonth = appData.getAccumulatedMonth();
-console.log('Месячный бюджет равен', accumulatedMonth);
+appData.budgetMonth = appData.getBudget();
+console.log('Месячный бюджет равен', appData.budgetMonth);
 
 appData.getTargetMonth = getTargetMonth
 function getTargetMonth() {
-return Math.ceil(appData.mission/accumulatedMonth);
+return Math.ceil(appData.mission/appData.budgetMonth);
 };
 
 if (appData.getTargetMonth() > 0) {
@@ -77,7 +77,7 @@ if (appData.getTargetMonth() > 0) {
 else console.log('Цель не будет достигнута');
 
 
-appData.budgetDay = Math.floor(accumulatedMonth/30);
+appData.budgetDay = Math.floor(appData.budgetMonth/30);
 console.log('Бюджет на день:', appData.budgetDay);
 
 //Условие
