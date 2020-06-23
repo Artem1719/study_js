@@ -32,6 +32,7 @@ let appData = {
             appData.deposit=confirm('Есть ли у вас депозит в банке?', true);
     }
 };
+appData.asking();
 console.log('appData: ', appData);
 
 console.log('Возможные расходы: ', appData.addExpenses);
