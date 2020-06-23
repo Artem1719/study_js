@@ -29,15 +29,6 @@ let appData = {
     }
 };
 
-
-let showTypeOf = function(data) {
-    console.log(data, typeof(data));
-};
-
-showTypeOf(money);
-showTypeOf(appData.income);
-showTypeOf(appData.deposit);
-
 console.log('Возможные расходы: ', appData.addExpenses);
 
 let expenses = [];
