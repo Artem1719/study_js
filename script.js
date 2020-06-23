@@ -22,12 +22,14 @@ let appData = {
     deposit: false,
     mission: 20000,
     period: 12,
+    budget: money,
     asking: function() {
        let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
             appData.addExpenses = addExpenses.toLowerCase().split(', ');
             appData.deposit=confirm('Есть ли у вас депозит в банке?', true);
     }
 };
+console.log('appData: ', appData);
 
 console.log('Возможные расходы: ', appData.addExpenses);
 
