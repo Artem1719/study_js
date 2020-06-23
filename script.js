@@ -26,7 +26,6 @@ let appData = {
     budgetDay: 0,
     budgetMonth: 0,
     expensesMonth: 0,
-    sum: 0,
     asking: function() {
         appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
             appData.addExpenses = appData.addExpenses.toLowerCase().split(', ');
@@ -35,11 +34,10 @@ let appData = {
             let amount,
                 consumption = prompt('Введите обязательную статью расходов?' , 'еда');
                 do {
-                    amount = prompt('Во сколько это обойдется?', 10000);
+                    amount = +prompt('Во сколько это обойдется?', 10000);
                 }
                 while(!isNumber(amount));
                 appData.expenses[consumption] = amount;
-                appData.sum += +amount;
         }
     }
 };
@@ -51,7 +49,10 @@ console.log('Возможные расходы: ', appData.addExpenses);
 appData.getExpensesMonth = getExpensesMonth
 function getExpensesMonth() {
 console.log(appData.expenses);
-return appData.sum;
+for (let key in appData.expenses) {
+    appData.expensesMonth += appData.expenses[key];
+}
+return appData.expensesMonth;
 };
 
 let expensesAmount = appData.getExpensesMonth();
