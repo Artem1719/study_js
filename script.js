@@ -65,16 +65,16 @@ let appData = {
     }
 };
 appData.asking();
-console.log('appData: ', appData);
+//console.log('appData: ', appData);
 
-console.log('Возможные расходы: ', appData.addExpenses);
-console.log(appData.expenses);
+//console.log('Возможные расходы: ', appData.addExpenses);
+//console.log(appData.expenses);
 
 appData.getExpensesMonth();
 console.log('Обязательные расходы за месяц ', + appData.expensesMonth);
 
 appData.budgetMonth = appData.getBudget();
-console.log('Месячный бюджет равен', appData.budgetMonth);
+//console.log('Месячный бюджет равен', appData.budgetMonth);
 
 if (appData.getTargetMonth() > 0) {
     console.log('Цель будет достигнута за ' + appData.getTargetMonth() + ' месяцев');
@@ -82,7 +82,12 @@ if (appData.getTargetMonth() > 0) {
 else console.log('Цель не будет достигнута');
 
 appData.budgetDay = Math.floor(appData.budgetMonth/30);
-console.log('Бюджет на день:', appData.budgetDay);
+//console.log('Бюджет на день:', appData.budgetDay);
 
 console.log(appData.getStatusIncome());
+
+console.log('Наша программа включает в себя данные:');
+for (let key in appData) {
+    console.log(key + ': ' + appData[key]);
+};
 
