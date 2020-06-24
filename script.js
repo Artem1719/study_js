@@ -39,37 +39,51 @@ let appData = {
                 while(!isNumber(amount));
                 appData.expenses[consumption] = amount;
         }
-    }
+    },
+    getExpensesMonth: function() {
+        for (let key in appData.expenses) {
+            appData.expensesMonth += appData.expenses[key];
+        }
+    return appData.expensesMonth;
+    },
+    getBudget: function() {
+        return money - appData.expensesMonth;
+    },
+    getTargetMonth: function() {
+        return Math.ceil(appData.mission/appData.budgetMonth);
+        },
+
 };
 appData.asking();
 console.log('appData: ', appData);
 
 console.log('Возможные расходы: ', appData.addExpenses);
+console.log(appData.expenses);
 
-appData.getExpensesMonth = getExpensesMonth
+/*appData.getExpensesMonth = getExpensesMonth
 function getExpensesMonth() {
 console.log(appData.expenses);
 for (let key in appData.expenses) {
     appData.expensesMonth += appData.expenses[key];
 }
 return appData.expensesMonth;
-};
+};*/
 
 appData.getExpensesMonth();
 console.log('Обязательные расходы за месяц ', + appData.expensesMonth);
 
-appData.getBudget = getBudget
+/*appData.getBudget = getBudget
 function getBudget() {
     return money - appData.expensesMonth;
-};
+};*/
 
 appData.budgetMonth = appData.getBudget();
 console.log('Месячный бюджет равен', appData.budgetMonth);
 
-appData.getTargetMonth = getTargetMonth
+/*appData.getTargetMonth = getTargetMonth
 function getTargetMonth() {
 return Math.ceil(appData.mission/appData.budgetMonth);
-};
+};*/
 
 if (appData.getTargetMonth() > 0) {
     console.log('Цель будет достигнута за ' + appData.getTargetMonth() + ' месяцев');
