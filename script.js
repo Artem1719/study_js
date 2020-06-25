@@ -71,7 +71,16 @@ let appData = {
         } else if (appData.budgetDay<0) {
             return('Что то пошло не так');
         }
-    }
+    },
+    getInfoDeposit: function () {
+        if(appData.deposit) {
+            appData.percentDeposit = prompt('Какой годовой процент?', 10); 
+            appData.moneyDeposit = prompt('Какая сумма заложена?',10000);
+        }
+    },
+    calcSavedMoney: function() {
+        return appData.budgetMonth * appData.period;
+    },
 };
 appData.asking();
 
@@ -93,4 +102,6 @@ console.log('Наша программа включает в себя данны
 for (let key in appData) {
     console.log(key + ': ' + appData[key]);
 };
+
+console.log(appData.percentDeposit, appData.moneyDeposit, appData.calcSavedMoney);
 
