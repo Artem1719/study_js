@@ -27,6 +27,13 @@ let appData = {
     budgetMonth: 0,
     expensesMonth: 0,
     asking: function() {
+
+        if(true) {
+            let itemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
+            let cashIncome = prompt('Сколько в месяц Вы на этом зарабатываете?', 10000);
+            appData.income[itemIncome] = cashIncome; 
+        }
+
         appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
             appData.addExpenses = appData.addExpenses.toLowerCase().split(', ');
             appData.deposit=confirm('Есть ли у вас депозит в банке?', true);
