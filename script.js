@@ -103,5 +103,6 @@ for (let key in appData) {
     console.log(key + ': ' + appData[key]);
 };
 
-console.log(appData.percentDeposit, appData.moneyDeposit, appData.calcSavedMoney);
+appData.getInfoDeposit();
+console.log(appData.percentDeposit, appData.moneyDeposit, appData.calcSavedMoney());
 
