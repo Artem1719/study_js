@@ -20,6 +20,8 @@ let appData = {
     expenses: {}, //Доп. расходы
     addExpenses: [], //Доп. расходы
     deposit: false,
+    percentDeposit: 0,
+    moneyDeposit: 0,
     mission: 20000,
     period: 12,
     budget: money,
@@ -28,11 +30,11 @@ let appData = {
     expensesMonth: 0,
     asking: function() {
 
-        if(true) {
+        if(confirm('Есть ли у Вас дополнительный источник заработка?')) {
             let itemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
             let cashIncome = prompt('Сколько в месяц Вы на этом зарабатываете?', 10000);
             appData.income[itemIncome] = cashIncome; 
-        }
+        };
 
         appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
             appData.addExpenses = appData.addExpenses.toLowerCase().split(', ');
