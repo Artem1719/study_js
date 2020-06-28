@@ -37,7 +37,7 @@ let appData = {
         };
 
         appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
-            appData.addExpenses = appData.addExpenses.toLowerCase().split(', ');
+            appData.addExpenses = appData.addExpenses.toUpperCase().split(', ');
             appData.deposit=confirm('Есть ли у вас депозит в банке?', true);
             for (let i = 0; i < 2; i++){
             let amount,
@@ -83,6 +83,8 @@ let appData = {
     },
 };
 appData.asking();
+
+console.log(appData.addExpenses);
 
 appData.getExpensesMonth();
 console.log('Обязательные расходы за месяц ', + appData.expensesMonth);
