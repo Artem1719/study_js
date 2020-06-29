@@ -32,7 +32,11 @@ let appData = {
 
         if(confirm('Есть ли у Вас дополнительный источник заработка?')) {
             let itemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
-            let cashIncome = prompt('Сколько в месяц Вы на этом зарабатываете?', 10000);
+            let cashIncome;
+            do {
+                cashIncome = prompt('Сколько в месяц Вы на этом зарабатываете?', 10000);
+            }
+            while(!isNumber(cashIncome));
             appData.income[itemIncome] = cashIncome; 
         };
 
@@ -76,12 +80,13 @@ let appData = {
         if(appData.deposit) {
 
                 appData.percentDeposit = prompt('Какой годовой процент?', 10); 
-                
+
                 while (!isNumber(appData.percentDeposit)) {
                     appData.percentDeposit = prompt('Какой годовой процент?', 10); 
                 }; 
 
                 appData.moneyDeposit = prompt('Какая сумма заложена?',10000);
+
                 while (!isNumber(appData.moneyDeposit)) {
                     appData.moneyDeposit = prompt('Какая сумма заложена?',10000); 
                     }; 
