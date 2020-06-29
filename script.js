@@ -1,7 +1,7 @@
 'use strict';
 
-let isNumber = function(n, m) {
-    return !isNaN(parseFloat(n, m)) && isFinite(n, m);
+let isNumber = function(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
 let money,
@@ -32,6 +32,9 @@ let appData = {
 
         if(confirm('Есть ли у Вас дополнительный источник заработка?')) {
             let itemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
+            while (itemIncome.trim === '' || itemIncome === 'null'){
+                ItemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
+            };
             let cashIncome;
             do {
                 cashIncome = prompt('Сколько в месяц Вы на этом зарабатываете?', 10000);
