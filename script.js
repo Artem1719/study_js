@@ -1,7 +1,7 @@
 'use strict';
 
-let isNumber = function(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
+let isNumber = function(n, m) {
+    return !isNaN(parseFloat(n, m)) && isFinite(n, m);
 };
 
 let money,
@@ -74,9 +74,18 @@ let appData = {
     },
     getInfoDeposit: function () {
         if(appData.deposit) {
-            appData.percentDeposit = prompt('Какой годовой процент?', 10); 
-            appData.moneyDeposit = prompt('Какая сумма заложена?',10000);
-        }
+
+                appData.percentDeposit = prompt('Какой годовой процент?', 10); 
+                
+                while (!isNumber(appData.percentDeposit)) {
+                    appData.percentDeposit = prompt('Какой годовой процент?', 10); 
+                }; 
+
+                appData.moneyDeposit = prompt('Какая сумма заложена?',10000);
+                while (!isNumber(appData.moneyDeposit)) {
+                    appData.moneyDeposit = prompt('Какая сумма заложена?',10000); 
+                    }; 
+        };
     },
     calcSavedMoney: function() {
         return appData.budgetMonth * appData.period;
@@ -99,6 +108,10 @@ else console.log('Цель не будет достигнута');
 appData.budgetDay = Math.floor(appData.budgetMonth/30);
 
 console.log(appData.getStatusIncome());
+
+appData.getInfoDeposit();
+
+appData.calcSavedMoney();
 
 console.log('Наша программа включает в себя данные:');
 for (let key in appData) {
