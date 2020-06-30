@@ -29,11 +29,11 @@ let appData = {
     budgetMonth: 0,
     expensesMonth: 0,
     asking: function() {
-
+        
         if(confirm('Есть ли у Вас дополнительный источник заработка?')) {
             let itemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
-            while (itemIncome.trim === '' || itemIncome === 'null'){
-                ItemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
+            while ( itemIncome === null || itemIncome.trim() === '' ){
+                itemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
             };
             let cashIncome;
             do {
