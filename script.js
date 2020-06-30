@@ -32,7 +32,7 @@ let appData = {
         
         if(confirm('Есть ли у Вас дополнительный источник заработка?')) {
             let itemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
-            while ( itemIncome === null || itemIncome.trim() === '' ){
+            while ( isNumber(itemIncome) || itemIncome === null || itemIncome.trim() === '' ){
                 itemIncome = prompt('Какой у Вас есть дополнительный заработок?', 'Таксую');
             };
             let cashIncome;
@@ -48,7 +48,12 @@ let appData = {
             appData.deposit=confirm('Есть ли у вас депозит в банке?', true);
             for (let i = 0; i < 2; i++){
             let amount,
-                consumption = prompt('Введите обязательную статью расходов?' , 'еда');
+                consumption;
+                do {
+                    consumption = prompt('Введите обязательную статью расходов?' , 'еда');
+                }
+                while( isNumber(consumption) || consumption === null || consumption.trim() === '' );      
+            
                 do {
                     amount = +prompt('Во сколько это обойдется?', 10000);
                 }
