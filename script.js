@@ -43,8 +43,12 @@ let appData = {
             appData.income[itemIncome] = cashIncome; 
         };
 
-        appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
-            appData.addExpenses = appData.addExpenses.toUpperCase().split(', ');
+            appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?', 'Internet, Mobile connection, Communal expenses');
+           appData.addExpenses = appData.addExpenses.split(', ');
+           for (let key in appData.addExpenses) {
+           appData.addExpenses[key] = appData.addExpenses[key].charAt().toUpperCase() + appData.addExpenses[key].substring(1);
+           };
+
             appData.deposit=confirm('Есть ли у вас депозит в банке?', true);
             for (let i = 0; i < 2; i++){
             let amount,
@@ -59,7 +63,7 @@ let appData = {
                 }
                 while(!isNumber(amount));
                 appData.expenses[consumption] = amount;
-        }
+            }
     },
     getExpensesMonth: function() {
         for (let key in appData.expenses) {
