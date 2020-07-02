@@ -1,3 +1,4 @@
 'use strict';
 
-console.log(1);
+const start = document.getElementById('start');
+console.log(start);
