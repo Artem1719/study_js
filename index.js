@@ -1,46 +1,31 @@
 'use strict';
 
-const start = document.getElementById('start');
-console.log(start);
-const btnPlus1 = document.querySelectorAll('button')[0];
-console.log(btnPlus1);
-const btnPlus2 = document.querySelectorAll('button')[1];
-console.log(btnPlus2);
-const depositCheck = document.querySelector('#deposit-check');
-console.log(depositCheck);
-const depositCheckmark = document.querySelector('.deposit-checkmark');
-console.log(depositCheckmark);
-const additionalIncomeItem1 = document.querySelectorAll('.additional_income-item')[0];
-console.log(additionalIncomeItem1);
-const additionalIncomeItem2 = document.querySelectorAll('.additional_income-item')[1];
-console.log(additionalIncomeItem2);
-const budgetDayValue = document.querySelector('.budget_day-value');
-console.log(budgetDayValue);
-const expensesMonthValue = document.querySelector('.expenses_month-value');
-console.log(expensesMonthValue);
-const additionalIncomeValue = document.querySelector('.additional_income-value');
-console.log(additionalIncomeValue);
-const additionalExpensesValue = document.querySelector('.additional_expenses-value');
-console.log(additionalExpensesValue);
-const incomePeriodValue = document.querySelector('.income_period-value');
-console.log(incomePeriodValue);
-const targetMonthValue = document.querySelector('.target_month-value');
-console.log(targetMonthValue);
-const salaryAmount = document.querySelector('.salary-amount');
-console.log(salaryAmount);
-const incomeTitle = document.querySelectorAll('.income-title')[1];
-console.log(incomeTitle);
-const incomeAmount = document.querySelector('.income-amount');
-console.log(incomeAmount);
-const expensesTitle = document.querySelectorAll('.expenses-title')[1];
-console.log(expensesTitle);
-const expensesAmount = document.querySelector('.expenses-amount');
-console.log(expensesAmount);
-const additionalExpensesItem = document.querySelector('.additional_expenses-item');
-console.log(additionalExpensesItem);
-const targetAmount = document.querySelector('.target-amount');
-console.log(targetAmount);
-const Range = document.querySelector('[type="range"]');
-console.log(Range);
-const budgetMonthValue = document.querySelector('.budget_month-value');
-console.log(budgetMonthValue);
+const startButton = document.getElementById('start'),
+    incomeAddButton = document.getElementsByTagName('button')[0],
+    expensesAddButton = document.getElementsByTagName('button')[1],
+    depositCheck = document.querySelector('#deposit-check'),
+    additionalIncomeItems = document.querySelectorAll('.additional_income-item'),
+    budjetDayValue = document.getElementsByClassName('result-total')[1],
+    expensesMonthValue = document.getElementsByClassName('result-total')[2],
+    additionalIncomeValue = document.getElementsByClassName('result-total')[3],
+    additionalExpensesValue = document.getElementsByClassName('result-total')[4],
+    incomePeriodValue = document.getElementsByClassName('result-total')[5],
+    targetMonthValue = document.getElementsByClassName('result-total')[6],
+    salaryAmount = document.querySelector('.salary-amount'),
+    incomeTitle = document.querySelector('.income-title'),
+    incomeAmount = document.querySelector('.income-amount'),
+    expensesTitle = document.querySelector('.expenses-title'),
+    expensesAmount = document.querySelector('.expenses-amount'),
+    additionalExpensesItem = document.querySelector('.additional_expenses-item'),
+    targetAmount = document.querySelector('.target-amount'),
+    periodSelect = document.querySelector('.period-select');
+
+
+
+
+
+
+
+
+
+
